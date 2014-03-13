@@ -1,5 +1,6 @@
 package jackpot;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 import javax.swing.ImageIcon;
 
@@ -27,13 +28,15 @@ public class Main extends javax.swing.JFrame {
     
     Random numAleatorios = new Random(7);
     
-    int listaNumero[] = {1, 2, 3, 4, 5};
-    public static final int Siete = 5;
-    public static final int Moneda = 4;
-    public static final int Trebol = 3;
-    public static final int Campana = 2;
-    public static final int Cereza = 1;
+    int listaNumero[] = {0, 1, 2, 3};
+    ImageIcon Siete = new ImageIcon(getClass().getResource("/imagenes/4.png"));
+    ImageIcon Moneda = new ImageIcon(getClass().getResource("/imagenes/3.png"));
+    ImageIcon Trebol = new ImageIcon(getClass().getResource("/imagenes/2.png"));
+    ImageIcon Campana = new ImageIcon(getClass().getResource("/imagenes/1.png"));
+    ImageIcon Cereza = new ImageIcon(getClass().getResource("/imagenes/0.png"));
 
+    DecimalFormat formato = new DecimalFormat("#,###.##");
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -285,21 +288,21 @@ public class Main extends javax.swing.JFrame {
     private void jButton50centActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton50centActionPerformed
         //cada vez que se pulse le suma 0.50€ al saldo total
         saldoTotal = saldoTotal + monedaCincuenta;
-        jLabelSaldo.setText(String.valueOf(saldoTotal));
+        jLabelSaldo.setText(String.valueOf(formato.format(saldoTotal)));
         double depositoSum = depositoPremio + monedaCincuenta;
     }//GEN-LAST:event_jButton50centActionPerformed
 
     private void jButton1euroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1euroActionPerformed
         //cada vez que se pulse le suma 1€ al saldo total
         saldoTotal = saldoTotal + monedaUnEuros;
-        jLabelSaldo.setText(String.valueOf(saldoTotal));
+        jLabelSaldo.setText(String.valueOf(formato.format(saldoTotal)));
         double depositoSum = depositoPremio + monedaUnEuros;
     }//GEN-LAST:event_jButton1euroActionPerformed
 
     private void jButton2euroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2euroActionPerformed
         //cada vez que se pulse le suma 2€ al saldo total
         saldoTotal = saldoTotal + monedaDosEuros;
-        jLabelSaldo.setText(String.valueOf(saldoTotal));
+        jLabelSaldo.setText(String.valueOf(formato.format(saldoTotal)));
         double depositoSum = depositoPremio + monedaDosEuros;
     }//GEN-LAST:event_jButton2euroActionPerformed
 
